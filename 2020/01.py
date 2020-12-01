@@ -12,6 +12,7 @@ for i in expenses_list:
         if(i + j == 2020):
             a = i
             b = j
+            break
 
 print(a * b)
 
@@ -26,5 +27,6 @@ for i in expenses_list:
                 a = i
                 b = j
                 c = k
+                break
 
 print(a * b * c)
