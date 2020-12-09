@@ -22,10 +22,14 @@ for i in range(25, len(numbers)):
 start = time.time()
 
 for r in range(2, len(numbers) + 1):
-    for i in range(0, len(numbers)-r+1):
-        if(sum(numbers[i:i+r-1]) == wrong_number):
-            print(numbers[i] + numbers[i + r-1])
+    for i in range(0, len(numbers)-r):
+        l = numbers[i:i+r]
+        if(sum(l) == wrong_number):
+            print(min(l) + max(l))
             break
+    else:
+        continue
+    break
 
 end = time.time()
 
