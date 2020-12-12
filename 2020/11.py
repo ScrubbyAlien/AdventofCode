@@ -78,7 +78,6 @@ def num_occ_seen_seats(x, y):
     for d in deltas:
         m = 1
         while True:
-            print(x + d[0] * m, y + d[1] * m, len(seats), len(seats[0]))
             if(is_valid(x + d[0] * m, y + d[1] * m)):
                 if(seats[y + d[1] * m][x + d[0] * m] != "."):
                     if(seats[y + d[1] * m][x + d[0] * m] == "#"):
