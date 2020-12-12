@@ -1,4 +1,7 @@
 import copy
+import time
+
+start = time.time()
 
 seats = list(map(list, open("2020/inputs/input11.txt", "r").read().split("\n")))
 
@@ -111,3 +114,4 @@ for y in range(len(seats)):
             n += 1
 
 print(n)
+print(time.time() - start)
