@@ -1,20 +1,6 @@
 import copy
-import time
-
-start = time.time()
 
 seats = list(map(list, open("2020/inputs/input11.txt", "r").read().split("\n")))
-
-# seats = list(map(list, ["L.LL.LL.LL",
-#                         "LLLLLLL.LL",
-#                         "L.L.L..L..",
-#                         "LLLL.LL.LL",
-#                         "L.LL.LL.LL",
-#                         "L.LLLLL.LL",
-#                         "..L.L.....",
-#                         "LLLLLLLLLL",
-#                         "L.LLLLLL.L",
-#                         "L.LLLLL.LL"]))
 
 
 # part 1
@@ -113,4 +99,3 @@ for y in range(len(seats)):
             n += 1
 
 print(n)
-print(time.time() - start)
