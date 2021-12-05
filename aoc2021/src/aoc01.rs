@@ -1,4 +1,5 @@
 use std::fs;
+use std::time::Instant;
 
 fn parse() -> Vec<i32> {
     let filename = "inputs/input01.txt";
@@ -12,6 +13,8 @@ fn parse() -> Vec<i32> {
 }
 
 pub fn part1() {
+    let start = Instant::now();
+
     let content_list = parse();
 
     let mut result: i32 = 0;
@@ -22,10 +25,18 @@ pub fn part1() {
         }
     }
 
-    println!("2021 01 part 1: {}", result);
+    assert_eq!(result, 1529);
+
+    println!(
+        "2021 01 part 1: {}, time: {:?}",
+        result,
+        Instant::now() - start
+    );
 }
 
 pub fn part2() {
+    let start = Instant::now();
+
     let content_list = parse();
 
     let mut new_list: Vec<i32> = Vec::new();
@@ -42,5 +53,11 @@ pub fn part2() {
         }
     }
 
-    println!("2021 01 part 2: {}", result);
+    assert_eq!(result, 1567);
+
+    println!(
+        "2021 01 part 2: {}, time: {:?}",
+        result,
+        Instant::now() - start
+    );
 }

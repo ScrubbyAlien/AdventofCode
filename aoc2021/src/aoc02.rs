@@ -1,4 +1,5 @@
 use std::fs;
+use std::time::Instant;
 
 fn parse() -> Vec<String> {
     let filename = "inputs/input02.txt";
@@ -8,6 +9,8 @@ fn parse() -> Vec<String> {
 }
 
 pub fn part1() {
+    let start = Instant::now();
+
     let list: Vec<_> = parse();
 
     let mut res_vec = vec![0, 0];
@@ -17,6 +20,7 @@ pub fn part1() {
 
         let instr = vec[0];
         let value = vec[1].parse::<i32>().unwrap();
+        // let value = vec[1].chars().next().unwrap() as u32 - 48u32;
 
         if instr == "forward" {
             res_vec[0] = res_vec[0] + value;
@@ -31,10 +35,18 @@ pub fn part1() {
         }
     }
 
-    println!("2021 02 part 1: {:?}", res_vec[0] * res_vec[1]);
+    assert_eq!(res_vec[0] * res_vec[1], 1427868);
+
+    println!(
+        "2021 02 part 1: {:?}, time: {:?}",
+        res_vec[0] * res_vec[1],
+        Instant::now() - start
+    );
 }
 
 pub fn part2() {
+    let start = Instant::now();
+
     let list: Vec<_> = parse();
 
     let mut res_vec = vec![0, 0, 0];
@@ -59,5 +71,11 @@ pub fn part2() {
         }
     }
 
-    println!("2021 02 part 2: {:?}", res_vec[0] * res_vec[1]);
+    assert_eq!(res_vec[0] * res_vec[1], 1568138742);
+
+    println!(
+        "2021 02 part 2: {:?}, time: {:?}",
+        res_vec[0] * res_vec[1],
+        Instant::now() - start
+    );
 }
